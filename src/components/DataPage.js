@@ -62,41 +62,41 @@ function Powerball(props) {
       
       if (closestValue === 50000000) {
         netEstimateDateArray.push(
-          new Date(netEstimateDate1.setDate(netEstimateDate1.getDate() + 24)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate2.setDate(netEstimateDate2.getDate() + 41)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 59)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 75)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 92)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 99)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate1.setDate(netEstimateDate1.getDate() + 24)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate2.setDate(netEstimateDate2.getDate() + 41)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 59)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 75)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 92)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 99)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
 
       } else if (closestValue === 100000000) {
         netEstimateDateArray.push(
           'we made it',
-          new Date(netEstimateDate2.setDate(netEstimateDate2.getDate() + 17)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 35)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 51)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 68)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 75)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate2.setDate(netEstimateDate2.getDate() + 17)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 35)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 51)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 68)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 75)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
 
       } else if (closestValue === 250000000) {
         netEstimateDateArray.push(
           'we made it',
           'we made it',
-          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 18)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 34)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 51)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 58)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate3.setDate(netEstimateDate3.getDate() + 18)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 34)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 51)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 58)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
       } else if (closestValue === 500000000) {
         netEstimateDateArray.push(
           'we made it',
           'we made it',
           'we made it',
-          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 16)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 33)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 40)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate4.setDate(netEstimateDate4.getDate() + 16)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 33)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 40)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
       } else if (closestValue === 750000000) {
         netEstimateDateArray.push(
@@ -104,8 +104,8 @@ function Powerball(props) {
           'we made it',
           'we made it',
           'we made it',
-          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 17)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'}),
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 24)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate5.setDate(netEstimateDate5.getDate() + 17)).toLocaleString('en-US', {month: 'long', day: 'numeric'}),
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 24)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
       } else if (closestValue === 1000000000) {
         netEstimateDateArray.push(
@@ -114,7 +114,7 @@ function Powerball(props) {
           'we made it',
           'we made it',
           'we made it',
-          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 7)).toLocaleString('en-US', {month: 'long', day: 'numeric', hour: 'numeric', timeZone: 'Etc/GMT-6'})
+          new Date(netEstimateDate6.setDate(netEstimateDate6.getDate() + 7)).toLocaleString('en-US', {month: 'long', day: 'numeric'})
         );
       }
       
