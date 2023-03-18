@@ -1,0 +1,260 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+.wrapper {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.wrapperHome {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+/* This is your text element */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
+  margin-top: 50px;
+  color: black
+}
+
+.headerWrapper{
+  text-align: center;
+}
+
+.lucky {
+  margin-top: 280px;
+  margin-right: 320px;
+  width: 54px;
+  height: 84px;
+}
+
+.loadingContainer {
+  text-align: center;
+}
+
+.linkContainer {
+  width: 620px;
+  margin: 0 auto;
+  margin-top: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonStyle {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 23px;
+  color: black
+}
+
+.powerballImage {
+  width: 30%;
+  height: 30%;
+  margin-top: 100px;
+}
+
+.megaImage {
+  width: 35%;
+  height: 35%;
+  margin-top: 100px;
+  margin-right: 20px;
+}
+
+.numberClass {
+  margin-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  color: black;
+}
+
+.container {
+  display: flex;
+  /*this makes the items stack vertically*/
+  justify-content: space-between; /*this distributes the space between the children*/
+  padding-left: 10px; /* add left padding to the first element */
+  padding-right: 10px; /* add right padding to the second element */
+  flex-wrap: wrap;
+  margin-top: 65px;
+}
+
+.tableTextStyle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  margin-top: 35px;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.tableTextStyle a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.luckyNumbers {
+  margin: 100px 0 auto;
+  width: 54px;
+  height: 84px;
+}
+
+.spinAnimation {
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
+.dataContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.dataPtags {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.loadingContainerData {
+  text-align: center;
+  margin-top: 300px
+}
+
+.navContainer {
+  display: flex;
+  margin-top: 150px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.navBar {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.navBar.active {
+  border-bottom: 1px solid black;
+}
+
+.navBar:last-child {
+  margin-right: 0;
+}
+
+.numberContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: black;
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.coverContainer {
+  display: flex;
+  align-items: center;
+}
+
+.coverContainer > p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  margin-top: 400px;
+}
+
+.clickableText {
+  text-decoration: none;
+}
+
+.arrow {
+  width: 75px;
+  margin-top: 215px;
+  margin-left: 95px;
+  position: absolute;
+}
+
+.dateClass {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: black;
+}
