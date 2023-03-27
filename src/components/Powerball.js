@@ -2,9 +2,16 @@ import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import img1 from '../images/lucky.png'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserById } from '../features/apislice.js';
 
 function Powerball(props) {
+
+    const dispatch = useDispatch();
+
+    const powerfulData = useSelector((state) => state.user.user);
+    const status = useSelector((state) => state.user.status);
+    const error = useSelector((state) => state.user.error);
 
     const navigate = useNavigate();
 
@@ -13,9 +20,11 @@ function Powerball(props) {
     }
     
     const callApi = {
-        callPower: 'https://ca-lottery.p.rapidapi.com/recent/powerball',
-        callMega: 'https://ca-lottery.p.rapidapi.com/recent/megamillions'
-    }
+      callPower: 'https://ca-lottery.p.rapidapi.com/recent/powerball',
+      callMega: 'https://ca-lottery.p.rapidapi.com/recent/megamillions'
+    };
+    
+    const url = props.select.classCalled === 'megaImage' ? callApi.callMega : callApi.callPower;
     
     const [responseData, setResponseData] = useState(null);
     const [apiData, setApiData] = useState('')
@@ -47,28 +56,13 @@ function Powerball(props) {
     }, [responseData]);
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: props.select.classCalled === 'powerballImage' ? callApi.callPower : callApi.callMega,
-            headers: {
-                'X-RapidAPI-Key': '00a6c0d680msh26b3c30101217b0p1fc2bdjsncf44f42ab8d3',
-                'X-RapidAPI-Host': 'ca-lottery.p.rapidapi.com'
-            }
-        };
 
         setLoading(true);
-    
-        axios.request(options)
-        .then((response) => {
-            setResponseData(response.data);
-        })
-        .catch((error) => {
-            console.error(error);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
         
+        dispatch(fetchUserById(url));
+
+        setResponseData(powerfulData)
+
       }, [props.select.classCalled]);
 
       return (

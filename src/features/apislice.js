@@ -3,18 +3,27 @@ import axios from 'axios';
 
 export const fetchUserById = createAsyncThunk(
   'users/fetchByIdStatus',
-  async () => {
-    const response = await axios.get(`https://jsonplaceholder.typicode.com/users/3`);
-    return response.data;
+  async (url) => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: url,
+        headers: {
+          'X-RapidAPI-Key': '00a6c0d680msh26b3c30101217b0p1fc2bdjsncf44f42ab8d3',
+          'X-RapidAPI-Host': 'ca-lottery.p.rapidapi.com'
+        }
+      });
+      return response.data;
+    } catch (error) {
+      throw Error(error.message);
+    }
   }
 );
 
 const userSlice = createSlice({
-  name: 'user',
+  name: [],
   initialState: {
-    user: null,
-    status: 'idle',
-    error: null,
+    user: 'idle',
   },
   reducers: {},
   extraReducers: (builder) => {

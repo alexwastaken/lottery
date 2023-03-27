@@ -19,7 +19,7 @@ function UserPage() {
       {status === 'failed' && <div>Error: {error}</div>}
       {status === 'succeeded' && (
         <div>
-          <h1>{user.name}</h1>
+          <h1>{user.DrawGameId}</h1>
           <p>Email: {user.email}</p>
           <p>Phone: {user.phone}</p>
         </div>
