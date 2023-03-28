@@ -31,10 +31,7 @@ function Powerball(props) {
       const currentTime = new Date();
       const lastUpdatedTime = new Date(powerfulDataTimeStamp);
     
-      // Only call the API if it has been longer than 1 minute since the state was last updated
-      console.log(powerfulData, 'dkl2lk2d')
       if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
-        console.log('suppp')
         dispatch(fetchUserById(url)).then(() => setLoading(false));
       } else {
         setLoading(false);
@@ -70,8 +67,6 @@ function Powerball(props) {
       let closestValue = predefinedValues[0];
       let netEstimateDateArray = []
       
-      console.log(value < 50000000, 'this is value')
-
       if(value < 50000000) {
         closestValue = 50000000
       } else if (value > 50000001 && value < 100000000) {
@@ -87,8 +82,6 @@ function Powerball(props) {
       } else if (value > 1000000000 ) {
         closestValue = 100000000
       }
-
-      console.log(closestValue)
       
       if (closestValue === 50000000) {
         netEstimateDateArray.push(

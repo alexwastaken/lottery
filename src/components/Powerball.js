@@ -36,7 +36,6 @@ function Powerball(props) {
     
       // Only call the API if it has been longer than 1 minute since the state was last updated
       if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
-        console.log('suppp')
         dispatch(fetchUserById(url))
       } else {
         setLoading(false);
@@ -52,16 +51,14 @@ function Powerball(props) {
         let lotteryData = []
         if(responseData) {
             let result = "";
-            for (let y = 0; y < 6; y++) {
-              let result = "";
               for (let i = 0; i < 6; i++) {
                 if (i === 5) {
-                  result += "<b>" + responseData.PreviousDraws[y].WinningNumbers[i].Number + "</b> ";
+                  console.log(result,'2d222222')
+                  result += "<b>" + responseData.PreviousDraws[0].WinningNumbers[i].Number + "</b> ";
                 } else {
-                  result += responseData.PreviousDraws[y].WinningNumbers[i].Number + ", " ;
+                  result += responseData.PreviousDraws[0].WinningNumbers[i].Number + '&nbsp&nbsp&nbsp'; ;
                 }
               }
-            }
             lotteryData.push(result)
             lotteryData.push(responseData.NextDraw.JackpotAmount.toLocaleString('en-US', {style: 'currency', currency: 'USD'}).replaceAll(' ', '').replace(/\.00$/, ''));
             lotteryData.push(responseData.NextDraw.EstimatedCashValue.toLocaleString('en-US', {style: 'currency', currency: 'USD'}).replaceAll(' ', '').replace(/\.00$/, ''));
