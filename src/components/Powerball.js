@@ -34,18 +34,13 @@ function Powerball(props) {
       const currentTime = new Date();
       const lastUpdatedTime = new Date(powerfulDataTimeStamp);
     
-      // Only call the API if it has been longer than 1 minute since the state was last updated
       if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
-        dispatch(fetchUserById(url)).then(() => setLoading(false));
+        dispatch(fetchUserById(url));
       } else {
+        setResponseData(powerfulData);
         setLoading(false);
       }
-    }, [dispatch, url, powerfulDataTimeStamp]);
-
-
-    useEffect(() => {
-      setResponseData(powerfulData);
-    }, [powerfulData]);
+    }, [dispatch, powerfulData, url, powerfulDataTimeStamp]);
 
     useEffect(() => {
         let lotteryData = []

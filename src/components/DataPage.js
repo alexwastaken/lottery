@@ -32,11 +32,12 @@ function Powerball(props) {
       const lastUpdatedTime = new Date(powerfulDataTimeStamp);
     
       if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
-        dispatch(fetchUserById(url)).then(() => setLoading(false));
+        dispatch(fetchUserById(url));
       } else {
+        setResponseData(powerfulData);
         setLoading(false);
       }
-    }, [dispatch, url, powerfulData, powerfulDataTimeStamp]);
+    }, [dispatch, powerfulData, url, powerfulDataTimeStamp]);
 
 
     useEffect(() => {
