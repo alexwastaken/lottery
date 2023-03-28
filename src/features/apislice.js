@@ -23,7 +23,8 @@ export const fetchUserById = createAsyncThunk(
 const userSlice = createSlice({
   name: [],
   initialState: {
-    user: 'idle',
+    user: null,
+    lastUpdated: null
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -34,6 +35,7 @@ const userSlice = createSlice({
       .addCase(fetchUserById.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        state.lastUpdated = new Date().toLocaleString();
       })
       .addCase(fetchUserById.rejected, (state, action) => {
         state.status = 'failed';

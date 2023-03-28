@@ -1,20 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
 import img1 from '../images/lucky.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserById } from '../features/apislice.js';
 
 
 function Powerball(props) {
 
+
+    const dispatch = useDispatch();
+
+    const powerfulData = useSelector((state) => state.user.user);
+    const powerfulDataTimeStamp = useSelector((state) => state.user.lastUpdated);
+
     const callApi = {
-        callPower: 'https://ca-lottery.p.rapidapi.com/powerball',
-        callMega: 'https://ca-lottery.p.rapidapi.com/megamillions'
-    }
+      callPower: 'https://ca-lottery.p.rapidapi.com/powerball',
+      callMega: 'https://ca-lottery.p.rapidapi.com/megamillions'
+    };
     
+    const url = props.select.classCalled === 'megaImage' ? callApi.callMega : callApi.callPower;
+
     const [responseData, setResponseData] = useState(null);
     const [apiData, setApiData] = useState('')
     const [loading, setLoading] = useState(false);
     const [selectedTab, setSelectedTab] = useState('history');
     const [numbers, setNumbers] = useState(['🍀','🍀','🍀','🍀','🍀','🍀']);
+
+    useEffect(() => {
+      setLoading(true);
+    
+      const currentTime = new Date();
+      const lastUpdatedTime = new Date(powerfulDataTimeStamp);
+    
+      // Only call the API if it has been longer than 1 minute since the state was last updated
+      console.log(powerfulData, 'dkl2lk2d')
+      if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
+        console.log('suppp')
+        dispatch(fetchUserById(url)).then(() => setLoading(false));
+      } else {
+        setLoading(false);
+      }
+    }, [dispatch, url, powerfulData, powerfulDataTimeStamp]);
+
+
+    useEffect(() => {
+      setResponseData(powerfulData);
+    }, [powerfulData]);
     
     const handleTabClick = (tab) => {
       setSelectedTab(tab);
@@ -143,34 +173,6 @@ function Powerball(props) {
         setApiData(lotteryData);
       }
     }, [responseData]);
-
-
-
-    useEffect(() => {
-
-        const options = {
-            method: 'GET',
-            url: props.select.classCalled === 'powerballImage' ? callApi.callPower : callApi.callMega,
-            headers: {
-                'X-RapidAPI-Key': '00a6c0d680msh26b3c30101217b0p1fc2bdjsncf44f42ab8d3',
-                'X-RapidAPI-Host': 'ca-lottery.p.rapidapi.com'
-            }
-        };
-
-        setLoading(true);
-    
-        axios.request(options)
-        .then((response) => {
-            setResponseData(response.data);
-        })
-        .catch((error) => {
-            console.error(error);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
-        
-      }, [props.select.classCalled]);
 
       return (
         <div className="wrapper">
