@@ -36,7 +36,7 @@ function Powerball(props) {
     
       // Only call the API if it has been longer than 1 minute since the state was last updated
       if (currentTime - lastUpdatedTime > 10000 || powerfulData === null) {
-        dispatch(fetchUserById(url))
+        dispatch(fetchUserById(url)).then(() => setLoading(false));
       } else {
         setLoading(false);
       }
@@ -53,7 +53,6 @@ function Powerball(props) {
             let result = "";
               for (let i = 0; i < 6; i++) {
                 if (i === 5) {
-                  console.log(result,'2d222222')
                   result += "<b>" + responseData.PreviousDraws[0].WinningNumbers[i].Number + "</b> ";
                 } else {
                   result += responseData.PreviousDraws[0].WinningNumbers[i].Number + '&nbsp&nbsp&nbsp'; ;
@@ -82,7 +81,6 @@ function Powerball(props) {
             <div className="dateClass">{apiData[5]}</div>
           </div>
           {(() => {
-            console.log(loading)
             if (loading) {
               return <div className="loadingContainer"><img src={img1} alt={'loading'} className="luckyNumbers spinAnimation" /></div>
             } else {
