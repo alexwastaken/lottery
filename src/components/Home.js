@@ -5,7 +5,7 @@ import img2 from '../images/arrow.png'
 function Home() {
   return (
     <div className="wrapperHome">
-      <h1>LANDMARK</h1>
+      <h1>Lotto Club</h1>
       <div className="linkContainer">
         <a href="/powerball" className="buttonStyle">powerball</a>
         <a href="/mega" className="buttonStyle">mega</a>
